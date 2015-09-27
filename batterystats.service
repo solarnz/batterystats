@@ -2,7 +2,6 @@
 Description=Collect battery statistics
 
 [Service]
-Type=oneshot
 ExecStart=/usr/bin/batterystats -out /var/log/battery.log
 
 [Install]
