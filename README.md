@@ -30,4 +30,4 @@ Usage
       -period int
         	How often in minutes to collect battery statistics (default 10)
 
-There are also some systemd service files in the root of the repository. Install and enable these to automatically collect data to /var/log/battery.d every 10 minutes and whenever you suspend or resume your laptop.
+There are also some systemd service files in the root of the repository. Install and enable these to automatically collect data to /var/log/battery.log every 10 minutes and whenever you suspend or resume your laptop.
