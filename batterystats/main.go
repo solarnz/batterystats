@@ -27,7 +27,7 @@ func main() {
 func collect(outfile string) {
 	batteries, err := batterystats.Batteries()
 	if err != nil {
-		fmt.Errorf("%s", err)
+		fmt.Fprintf(os.Stderr, "%s", err)
 		os.Exit(1)
 	}
 
@@ -38,7 +38,7 @@ func collect(outfile string) {
 	} else {
 		f, err = os.OpenFile(outfile, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0666)
 		if err != nil {
-			fmt.Errorf("%s", err)
+			fmt.Fprintf(os.Stderr, "%s", err)
 			os.Exit(1)
 		}
 	}
@@ -46,7 +46,7 @@ func collect(outfile string) {
 	for _, battery := range batteries {
 		data, err := json.Marshal(battery)
 		if err != nil {
-			fmt.Errorf("%s", err)
+			fmt.Fprintf(os.Stderr, "%s", err)
 			os.Exit(1)
 		}
 		f.Write(data)
