@@ -12,7 +12,7 @@ import (
 
 const BATTERY_PATH = "/sys/class/power_supply"
 
-func GetBatteries() ([]BatteryStatus, error) {
+func Batteries() ([]BatteryStatus, error) {
 	dirs, err := ioutil.ReadDir(BATTERY_PATH)
 	if err != nil {
 		return nil, err

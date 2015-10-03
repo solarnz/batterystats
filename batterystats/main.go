@@ -25,7 +25,7 @@ func main() {
 }
 
 func collect(outfile string) {
-	batteries, err := batterystats.GetBatteries()
+	batteries, err := batterystats.Batteries()
 	if err != nil {
 		fmt.Errorf("%s", err)
 		os.Exit(1)
