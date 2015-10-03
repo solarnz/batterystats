@@ -10,15 +10,16 @@ import (
 	"time"
 )
 
-const BATTERY_PATH = "/sys/class/power_supply"
+const batteryPath = "/sys/class/power_supply"
 
+// Batteries lists the status of all of the batteries currently present on your system.
 func Batteries() ([]BatteryStatus, error) {
-	dirs, err := ioutil.ReadDir(BATTERY_PATH)
+	dirs, err := ioutil.ReadDir(batteryPath)
 	if err != nil {
 		return nil, err
 	}
 
-	batteries := make([]BatteryStatus, 0)
+	var batteries []BatteryStatus
 	for _, dir := range dirs {
 		if strings.ToLower(dir.Name()) == "ac" {
 			continue
@@ -35,7 +36,7 @@ func Batteries() ([]BatteryStatus, error) {
 }
 
 func readBattery(name string) (*BatteryStatus, error) {
-	file, err := ioutil.ReadFile(fmt.Sprintf("%s/%s/uevent", BATTERY_PATH, name))
+	file, err := ioutil.ReadFile(fmt.Sprintf("%s/%s/uevent", batteryPath, name))
 	if err != nil {
 		return nil, err
 	}

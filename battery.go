@@ -4,6 +4,7 @@ import (
 	"time"
 )
 
+// BatteryStatus is the status of a battery
 type BatteryStatus struct {
 	Timestamp        time.Time
 	BatteryID        string
