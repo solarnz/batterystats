@@ -1,6 +1,10 @@
 batterystats
 ============
 
+[![Build Status](https://travis-ci.org/solarnz/batterystats.svg)](https://travis-ci.org/solarnz/batterystats)
+[![GoDoc](https://godoc.org/github.com/solarnz/batterystats?status.svg)](http://godoc.org/github.com/solarnz/batterystats)
+[![GitHub release](https://img.shields.io/github/release/solarnz/batterystats.svg)]()
+
 A tool that collects battery statistics from your laptop and writes them to a file.
 It can write to a file in JSON format, one line per battery per collection.
 
